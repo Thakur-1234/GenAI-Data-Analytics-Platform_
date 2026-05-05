@@ -1,0 +1,306 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   THEME TOKEN SYSTEM
+   ============================================ */
+
+/* CSS Variables for Theme Tokens - Light Theme (Default) */
+:root {
+  /* ========== Colors - Background ========== */
+  --color-bg-primary: 255 255 255;
+  --color-bg-secondary: 249 250 251;
+  --color-bg-tertiary: 243 244 246;
+  --color-bg-elevated: 255 255 255;
+  --color-bg-overlay: 0 0 0 / 0.5;
+  
+  /* ========== Colors - Surface ========== */
+  --color-surface-primary: 255 255 255;
+  --color-surface-secondary: 249 250 251;
+  --color-surface-tertiary: 243 244 246;
+  --color-surface-hover: 229 231 235;
+  --color-surface-active: 209 213 219;
+  
+  /* ========== Colors - Text ========== */
+  --color-text-primary: 17 24 39;
+  --color-text-secondary: 55 65 81;
+  --color-text-tertiary: 107 114 128;
+  --color-text-placeholder: 156 163 175;
+  --color-text-inverse: 255 255 255;
+  
+  /* ========== Colors - Border ========== */
+  --color-border-primary: 209 213 219;
+  --color-border-secondary: 229 231 235;
+  --color-border-tertiary: 243 244 246;
+  --color-border-focus: 59 130 246;
+  
+  /* ========== Colors - Brand / Accent ========== */
+  --color-primary: 59 130 246;
+  --color-primary-hover: 37 99 235;
+  --color-primary-light: 219 234 254;
+  --color-primary-dark: 30 64 175;
+  
+  --color-accent-cyan: 6 182 212;
+  --color-accent-purple: 168 85 247;
+  --color-accent-emerald: 16 185 129;
+  --color-accent-amber: 245 158 11;
+  --color-accent-red: 239 68 68;
+  --color-accent-pink: 236 72 153;
+  --color-accent-orange: 249 115 22;
+  
+  /* ========== Colors - Status ========== */
+  --color-success: 16 185 129;
+  --color-success-light: 209 250 229;
+  --color-warning: 245 158 11;
+  --color-warning-light: 254 243 199;
+  --color-error: 239 68 68;
+  --color-error-light: 254 226 226;
+  --color-info: 59 130 246;
+  --color-info-light: 219 234 254;
+  
+  /* ========== Elevation ========== */
+  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+  
+  /* ========== Border Radius ========== */
+  --radius-none: 0;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+  
+  /* ========== Opacity ========== */
+  --opacity-0: 0;
+  --opacity-25: 0.25;
+  --opacity-50: 0.5;
+  --opacity-75: 0.75;
+  --opacity-100: 1;
+  
+  /* ========== Typography ========== */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  
+  /* ========== Chart Colors ========== */
+  --chart-grid: 229 231 235;
+  --chart-axis: 156 163 175;
+  --chart-tooltip-bg: 255 255 255;
+  --chart-tooltip-text: 17 24 39;
+  --chart-legend: 107 114 128;
+}
+
+/* Dark Theme */
+html.dark {
+  /* ========== Colors - Background ========== */
+  --color-bg-primary: 15 23 42;
+  --color-bg-secondary: 30 41 59;
+  --color-bg-tertiary: 51 65 85;
+  --color-bg-elevated: 30 41 59;
+  --color-bg-overlay: 0 0 0 / 0.7;
+  
+  /* ========== Colors - Surface ========== */
+  --color-surface-primary: 30 41 59;
+  --color-surface-secondary: 51 65 85;
+  --color-surface-tertiary: 71 85 105;
+  --color-surface-hover: 71 85 105;
+  --color-surface-active: 100 116 139;
+  
+  /* ========== Colors - Text ========== */
+  --color-text-primary: 248 250 252;
+  --color-text-secondary: 226 232 240;
+  --color-text-tertiary: 148 163 184;
+  --color-text-placeholder: 100 116 139;
+  --color-text-inverse: 15 23 42;
+  
+  /* ========== Colors - Border ========== */
+  --color-border-primary: 71 85 105;
+  --color-border-secondary: 51 65 85;
+  --color-border-tertiary: 30 41 59;
+  --color-border-focus: 59 130 246;
+  
+  /* ========== Colors - Border (lighter for dark mode) ========== */
+  --border-color: 51 65 85;
+  --border-light: 30 41 59;
+  
+  /* ========== Elevation ========== */
+  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.4), 0 1px 2px -1px rgb(0 0 0 / 0.4);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.4), 0 8px 10px -6px rgb(0 0 0 / 0.4);
+  --shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.3);
+  
+  /* ========== Chart Colors ========== */
+  --chart-grid: 51 65 85;
+  --chart-axis: 100 116 139;
+  --chart-tooltip-bg: 30 41 59;
+  --chart-tooltip-text: 248 250 252;
+  --chart-legend: 148 163 184;
+}
+
+/* Also support system preference */
+@media (prefers-color-scheme: dark) {
+  html:not(.light) {
+    /* ========== Colors - Background ========== */
+    --color-bg-primary: 15 23 42;
+    --color-bg-secondary: 30 41 59;
+    --color-bg-tertiary: 51 65 85;
+    --color-bg-elevated: 30 41 59;
+    --color-bg-overlay: 0 0 0 / 0.7;
+    
+    /* ========== Colors - Surface ========== */
+    --color-surface-primary: 30 41 59;
+    --color-surface-secondary: 51 65 85;
+    --color-surface-tertiary: 71 85 105;
+    --color-surface-hover: 71 85 105;
+    --color-surface-active: 100 116 139;
+    
+    /* ========== Colors - Text ========== */
+    --color-text-primary: 248 250 252;
+    --color-text-secondary: 226 232 240;
+    --color-text-tertiary: 148 163 184;
+    --color-text-placeholder: 100 116 139;
+    --color-text-inverse: 15 23 42;
+    
+    /* ========== Colors - Border ========== */
+    --color-border-primary: 71 85 105;
+    --color-border-secondary: 51 65 85;
+    --color-border-tertiary: 30 41 59;
+    --color-border-focus: 59 130 246;
+    
+    /* ========== Elevation ========== */
+    --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.4), 0 1px 2px -1px rgb(0 0 0 / 0.4);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.4), 0 8px 10px -6px rgb(0 0 0 / 0.4);
+    --shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.3);
+    
+    /* ========== Chart Colors ========== */
+    --chart-grid: 51 65 85;
+    --chart-axis: 100 116 139;
+    --chart-tooltip-bg: 30 41 59;
+    --chart-tooltip-text: 248 250 252;
+    --chart-legend: 148 163 184;
+  }
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: rgb(var(--color-bg-primary));
+  color: rgb(var(--color-text-primary));
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ============================================
+   THEME-AWARE UTILITY CLASSES
+   ============================================ */
+
+/* Backgrounds */
+.bg-theme-primary { background-color: rgb(var(--color-bg-primary)); }
+.bg-theme-secondary { background-color: rgb(var(--color-bg-secondary)); }
+.bg-theme-tertiary { background-color: rgb(var(--color-bg-tertiary)); }
+.bg-theme-elevated { background-color: rgb(var(--color-bg-elevated)); }
+
+/* Surfaces */
+.surface-theme { background-color: rgb(var(--color-surface-primary)); }
+.surface-theme-secondary { background-color: rgb(var(--color-surface-secondary)); }
+.surface-theme-hover:hover { background-color: rgb(var(--color-surface-hover)); }
+.surface-theme-active:active { background-color: rgb(var(--color-surface-active)); }
+
+/* Text */
+.text-theme-primary { color: rgb(var(--color-text-primary)); }
+.text-theme-secondary { color: rgb(var(--color-text-secondary)); }
+.text-theme-tertiary { color: rgb(var(--color-text-tertiary)); }
+.text-theme-placeholder { color: rgb(var(--color-text-placeholder)); }
+.text-theme-inverse { color: rgb(var(--color-text-inverse)); }
+
+/* Borders */
+.border-theme { border-color: rgb(var(--color-border-primary)); }
+.border-theme-secondary { border-color: rgb(var(--color-border-secondary)); }
+.border-theme-tertiary { border-color: rgb(var(--color-border-tertiary)); }
+.border-theme-focus { border-color: rgb(var(--color-border-focus)); }
+
+/* Shadows */
+.shadow-theme-xs { box-shadow: var(--shadow-xs); }
+.shadow-theme-sm { box-shadow: var(--shadow-sm); }
+.shadow-theme-md { box-shadow: var(--shadow-md); }
+.shadow-theme-lg { box-shadow: var(--shadow-lg); }
+.shadow-theme-xl { box-shadow: var(--shadow-xl); }
+.shadow-theme-inner { box-shadow: var(--shadow-inner); }
+
+/* Focus ring */
+.focus-ring:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgb(var(--color-bg-primary)), 0 0 0 4px rgb(var(--color-border-focus));
+}
+
+/* ============================================
+   CUSTOM SCROLLBAR - Theme Aware
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(var(--color-bg-secondary));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--color-border-primary));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--color-text-tertiary));
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(var(--color-border-primary)) rgb(var(--color-bg-secondary));
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* ============================================
+   TAILWIND COMPATIBILITY LAYERS
+   ============================================ */
+
+/* Light mode base (for when dark class is not present) */
+html:not(.dark) {
+  --background: 255 255 255;
+  --foreground: 17 24 39;
+}
+
+/* Dark mode overrides */
+html.dark {
+  --background: 15 23 42;
+  --foreground: 248 250 252;
+}
